@@ -3,6 +3,8 @@ package com.lifeos.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.lifeos.enums.Role;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -36,18 +38,29 @@ public class User {
 	@OneToMany(mappedBy="owner")
 	private List<Workspace> workspaces;
 	
+	@OneToMany(mappedBy = "user")
+	private List<WorkspaceMember> workspaceMembership;
 	private LocalDateTime craetedAt;
 	
-	public enum Role{
-		SUPER_ADMIN,
-		ADMIN,
-		MEMBER,
-		VIEWER
-	}
-
 	//Getters and Setters
 	public long getId() {
 		return id;
+	}
+
+	public List<Workspace> getWorkspaces() {
+		return workspaces;
+	}
+
+	public void setWorkspaces(List<Workspace> workspaces) {
+		this.workspaces = workspaces;
+	}
+
+	public List<WorkspaceMember> getWorkspaceMembership() {
+		return workspaceMembership;
+	}
+
+	public void setWorkspaceMembership(List<WorkspaceMember> workspaceMembership) {
+		this.workspaceMembership = workspaceMembership;
 	}
 
 	public void setId(long id) {

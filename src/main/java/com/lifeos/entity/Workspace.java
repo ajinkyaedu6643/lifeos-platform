@@ -1,6 +1,7 @@
 package com.lifeos.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.lifeos.enums.WorkspaceType;
 
@@ -10,7 +11,9 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -29,10 +32,23 @@ public class Workspace {
 	
 	@ManyToOne
 	private User owner;
+	
+	@OneToMany(mappedBy = "workspace")
+	private List<WorkspaceMember> members;
+	
+	@ManyToOne
+	@JoinColumn(name = "created_by")
+	private User createdBy;
 	// Getter and Setters
 	
 	public Long getId() {
 		return id;
+	}
+	public List<WorkspaceMember> getMembers() {
+		return members;
+	}
+	public void setMembers(List<WorkspaceMember> members) {
+		this.members = members;
 	}
 	public User getOwner() {
 		return owner;
@@ -67,6 +83,14 @@ public class Workspace {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
+	public User getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+	}
+	
+	
 	
 	
 }

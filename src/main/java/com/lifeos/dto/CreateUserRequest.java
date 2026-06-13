@@ -2,7 +2,7 @@ package com.lifeos.dto;
 
 import org.springframework.validation.annotation.Validated;
 
-import com.lifeos.entity.User.Role;
+import com.lifeos.enums.Role;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
