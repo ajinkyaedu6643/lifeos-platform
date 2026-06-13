@@ -1,5 +1,6 @@
 package com.lifeos.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.lifeos.enums.WorkspaceRole;
 
 import jakarta.persistence.Entity;
@@ -22,10 +23,12 @@ public class WorkspaceMember {
 	
 	@ManyToOne
 	@JoinColumn(name="workspace_id")
+	@JsonBackReference
 	private Workspace workspace;
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
+	@JsonBackReference
 	private User user;
 	
 	@Enumerated(EnumType.STRING)

@@ -3,6 +3,7 @@ package com.lifeos.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.lifeos.enums.Role;
 
 import jakarta.persistence.Column;
@@ -39,6 +40,7 @@ public class User {
 	private List<Workspace> workspaces;
 	
 	@OneToMany(mappedBy = "user")
+	@JsonManagedReference
 	private List<WorkspaceMember> workspaceMembership;
 	private LocalDateTime craetedAt;
 	

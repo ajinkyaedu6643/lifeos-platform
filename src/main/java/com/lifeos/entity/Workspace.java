@@ -3,6 +3,7 @@ package com.lifeos.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.lifeos.enums.WorkspaceType;
 
 import jakarta.persistence.Entity;
@@ -34,6 +35,7 @@ public class Workspace {
 	private User owner;
 	
 	@OneToMany(mappedBy = "workspace")
+	@JsonManagedReference
 	private List<WorkspaceMember> members;
 	
 	@ManyToOne
