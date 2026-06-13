@@ -13,6 +13,8 @@ import com.lifeos.repository.UserRepository;
 import com.lifeos.repository.WorkspaceMemberRepository;
 import com.lifeos.repository.WorkspaceRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class WorkspaceServiceImpl implements WorkspaceService {
 	
@@ -30,6 +32,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
 	}
 	
 	@Override
+	@Transactional
 	public Workspace createWorkspace(CreateWorkspaceRequest request) {
 		// TODO Auto-generated method stub
 		Optional <User> userOptional = userRepository.findById(request.getOwnerUserId());
