@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lifeos.dto.CreateWorkspaceRequest;
 import com.lifeos.entity.Workspace;
-import com.lifeos.service.WorkspaceServiceImpl;
+import com.lifeos.service.impl.WorkspaceServiceImpl;
 
 @RestController
 @RequestMapping("/api/workspaces")

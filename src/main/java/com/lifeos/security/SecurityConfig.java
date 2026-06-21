@@ -17,6 +17,7 @@ public class SecurityConfig {
 						.requestMatchers("/api/users/**").permitAll()
 						.requestMatchers("/api/workspaces/**").permitAll()
 						.requestMatchers("/api/parties/**").permitAll()
+						.requestMatchers("/api/documents/**").permitAll()
 						.anyRequest().authenticated()
 						)
 				.httpBasic(Customizer.withDefaults());

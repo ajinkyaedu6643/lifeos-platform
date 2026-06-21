@@ -1,4 +1,4 @@
-package com.lifeos.service;
+package com.lifeos.service.impl;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ import com.lifeos.enums.TimelineEventType;
 import com.lifeos.repository.PartyRepository;
 import com.lifeos.repository.TimelineEventRepository;
 import com.lifeos.repository.WorkspaceRepository;
+import com.lifeos.service.PartyService;
 
 import jakarta.transaction.Transactional;
 

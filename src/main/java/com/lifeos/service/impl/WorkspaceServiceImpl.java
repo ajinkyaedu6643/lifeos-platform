@@ -1,4 +1,4 @@
-package com.lifeos.service;
+package com.lifeos.service.impl;
 
 import java.util.Optional;
 
@@ -12,6 +12,7 @@ import com.lifeos.enums.WorkspaceRole;
 import com.lifeos.repository.UserRepository;
 import com.lifeos.repository.WorkspaceMemberRepository;
 import com.lifeos.repository.WorkspaceRepository;
+import com.lifeos.service.WorkspaceService;
 
 import jakarta.transaction.Transactional;
 

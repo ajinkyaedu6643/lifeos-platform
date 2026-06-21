@@ -1,4 +1,4 @@
-package com.lifeos.service;
+package com.lifeos.service.impl;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.lifeos.entity.User;
 import com.lifeos.repository.UserRepository;
+import com.lifeos.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

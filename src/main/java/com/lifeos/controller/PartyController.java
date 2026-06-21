@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lifeos.dto.CreatePartyRequest;
 import com.lifeos.entity.Party;
-import com.lifeos.service.PartyServiceImpl;
+import com.lifeos.service.impl.PartyServiceImpl;
 
 @RestController
 @RequestMapping("/api/parties")
