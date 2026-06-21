@@ -1,5 +1,7 @@
 package com.lifeos.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.lifeos.dto.CreateDocumentRequest;
@@ -72,6 +74,22 @@ public class DocumentServiceImpl implements DocumentService {
 		
 		timelineEventRepository.save(event);
 		return savedDocument;
+	}
+
+
+	@Override
+	public List<Document> getAllDocuments() {
+		// TODO Auto-generated method stub
+		
+		return documentRepository.findAll();
+	}
+
+
+	@Override
+	public Document getDocumentById(Long id) {
+		// TODO Auto-generated method stub
+		return documentRepository.findById(id)
+				.orElseThrow(()-> new RuntimeException("Document not found"));
 	}
 
 }

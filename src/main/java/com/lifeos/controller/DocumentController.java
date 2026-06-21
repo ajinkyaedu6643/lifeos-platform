@@ -1,6 +1,10 @@
 package com.lifeos.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +28,18 @@ public class DocumentController {
 			@RequestBody CreateDocumentRequest request){
 		return ResponseEntity.ok(
 				documentService.createDocument(request));
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<Document>> getAllDocuments(){
+		
+		return ResponseEntity.ok(documentService.getAllDocuments());
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<Document> getDocumentById(@PathVariable Long id){
+		return ResponseEntity.ok(
+				documentService.getDocumentById(id));
 	}
 	
 }
