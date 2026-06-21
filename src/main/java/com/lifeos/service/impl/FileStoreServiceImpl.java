@@ -11,7 +11,7 @@ public class FileStoreServiceImpl implements FileStoreService {
 	@Override
 	public String storeFile(MultipartFile file) {
 		// TODO Auto-generated method stub
-		return null;
+		return "Not Implemented";
 	}
 
 }
